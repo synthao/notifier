@@ -99,6 +99,7 @@ func newLogger(level string) (*zap.Logger, error) {
 			atom,
 		),
 		zap.WithCaller(true),
+		zap.Fields(zap.String("app", os.Getenv("APP_ID"))),
 		zap.AddStacktrace(zap.ErrorLevel),
 	), nil
 }
