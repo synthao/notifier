@@ -36,7 +36,7 @@ func main() {
 	}
 
 	reader := kafka.NewReader(kafka.ReaderConfig{
-		Brokers:  []string{os.Getenv("KAFKA_BROKER_HOST")},
+		Brokers:  []string{os.Getenv("KAFKA_ADDRESS")},
 		Topic:    os.Getenv("KAFKA_TOPIC"),
 		MaxBytes: 10e6, // 10MB4
 		GroupID:  os.Getenv("KAFKA_GROUP_ID"),
